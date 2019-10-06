@@ -1,4 +1,4 @@
-package com.kcv;
+package net.killerchip.kcv;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

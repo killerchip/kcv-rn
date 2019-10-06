@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build:android": "rm kcv.aab && cd android && ./gradlew bundleRelease && cp app/build/outputs/bundle/release/app.aab ../kcv.aab && cd .."
   },
   "dependencies": {
     "expo": "^35.0.0",

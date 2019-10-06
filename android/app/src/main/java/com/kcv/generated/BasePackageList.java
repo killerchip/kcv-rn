@@ -1,4 +1,4 @@
-package com.kcv.generated;
+package net.killerchip.kcv.generated;
 
 import java.util.Arrays;
 import java.util.List;

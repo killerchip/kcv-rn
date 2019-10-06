@@ -99,12 +99,23 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.kcv"
+        applicationId "net.killerchip.kcv"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "0.0.3"
     }
+    signingConfigs {
+        release {
+            if (project.hasProperty('KCV_UPLOAD_STORE_FILE')) {
+                storeFile file(KCV_UPLOAD_STORE_FILE)
+                storePassword KCV_UPLOAD_STORE_PASSWORD
+                keyAlias KCV_UPLOAD_KEY_ALIAS
+                keyPassword KCV_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+
     splits {
         abi {
             reset()
@@ -117,6 +128,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
